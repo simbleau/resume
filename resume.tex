@@ -1,12 +1,3 @@
-%-------------------------
-% Resume in Latex
-% Based off of: https://github.com/sb2nov/resume
-% and Jake Gutierrez's version of it
-% at https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
-% inspired by https://practicaltypography.com/resumes.html
-% License : MIT
-%------------------------
-
 \documentclass[a4paper,11pt]{article}
 
 \usepackage{latexsym}
@@ -25,7 +16,6 @@
 \usepackage{graphicx}
 
 %--------------UNDERLINING---------------
-% taken from https://alexwlchan.net/2017/10/latex-underlines/
 
 \usepackage{contour}
 \usepackage{ulem}
@@ -46,16 +36,12 @@
 \usepackage{fontspec}
 \usepackage{fontawesome5}
 
-% I could have just used the charter package here for the font I wanted...
-% but I'd still need to change compiler to XeLaTeX to include the title font
-% \usepackage{charter}
-
 \setmainfont{XCharter}
 
 \newfontfamily{\basictitle}{basictitlefont}[
 Path = Fonts/,
 Extension = .ttf,
-UprightFont = basictitlefont
+UprightFont = TitleFont
 ]
 % to use:
 % {\basictitle This text uses the basictitle font}
@@ -133,23 +119,9 @@ UprightFont = basictitlefont
 
 \begin{document}
 
-% ----- TOGGLE PHOTO --------
-% comment out \iffalse and remove the % from \iftrue to toggle photo
-\iffalse
-% \iftrue
-\begin{wrapfigure}{R}{0.15\textwidth}
-\vspace{-35pt}
-\includegraphics[scale=0.20]{dp_cropped}
-\end{wrapfigure}
-\fi
-
 %----------HEADING----------
-
 {\basictitle \Huge Spencer C. Imbleau}
 \\
-
-% ----- TOGGLE FOR PHOTO ----
-% \vspace{10pt}
 
 \href{mailto:spencer@imbleau.com}{
     \faEnvelope
@@ -172,15 +144,15 @@ UprightFont = basictitlefont
   \resumeSubHeadingListStart
     \resumeSubheading
       {Appalachian State University}{North Carolina}
-      {M. Sci. Computer Science}{Aug 2020 -- Present}
+      {M.Sc. Computer Science}{Aug 2020 -- Present}
       \resumeItemListStart
         \resumeItem{ABET Accredited}
-        \resumeItem{GPA 3.67/4.0}
+        \resumeItem{GPA 3.7/4.0 updated Spring 2021}
         \resumeItem{Expected Graduation: May 2022}
       \resumeItemListEnd
     \resumeSubheading
       {Western Carolina University}{North Carolina}
-      {B. Sci. Computer Science}{Aug 2015 -- May 2019}
+      {B.Sc. Computer Science}{Aug 2015 -- May 2019}
       \resumeItemListStart
         \resumeItem{ABET Accredited}
         \resumeItem{GPA 3.1/4.0}
@@ -190,9 +162,17 @@ UprightFont = basictitlefont
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
+  
+      \resumeSubheading
+      {Graduate Research Assistant}{Jun 2021 -- Present}
+      {Appalachian State University}{Boone, NC, USA}
+      \resumeItemListStart
+        \resumeItem{Conducting research on interactive scalable vector graphic rendering}
+        \resumeItem{Bench-marking novel approaches to interactivity in physics simulations using SVG}
+      \resumeItemListEnd
 
     \resumeSubheading
-      {Computer Science Teaching Assistant}{Aug 2020 -- Present}
+      {Graduate Teaching Assistant}{Aug 2020 -- Present}
       {Appalachian State University}{Boone, NC, USA}
       \resumeItemListStart
         \resumeItem{Instructed undergraduate computer science laboratory classrooms}
@@ -207,26 +187,8 @@ UprightFont = basictitlefont
         \resumeItem{Programmed digital signage software used in all retail stores}
         \resumeItem{Programmed critical VNC client software used by all corporate employees}
       \resumeItemListEnd
-      
-      \iffalse
-      % \iftrue
-% -----------Multiple Positions Heading-----------
-    \resumeSubSubheading
-     {Software Engineer I}{Oct 2014 - Sep 2016}
-    \resumeItemListStart
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-     \resumeItemListEnd
-    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-\fi
 
 \resumeSubHeadingListEnd
-  
-
-% \iffalse
-\iftrue
 
 %-----------RESEARCH-----------
 \section{Projects}
@@ -234,55 +196,41 @@ UprightFont = basictitlefont
   
     \resumeSubheading
       {\href{https://github.com/simbleau/power}
-      {\myuline{'Power', a hardware-accelerated simulation engine}}}{Nov 2020 -- Present}
+      {\myuline{'Power', a hardware-accelerated simulation engine in Java}}}{Nov 2020 -- Feb 2021}
       {Solo project}{Boone, North Carolina}
       \resumeItemListStart
-        \resumeItem{Open-source visualized physics engine project}
-        \resumeItem{Dual-support for software and hardware-accelerated graphics}
+        \resumeItem{Open-source interactive graphics, input, physics engine library}
+        \resumeItem{Dual-support for software and hardware-accelerated rendering}
         \resumeItem{Designed for compatability on any architecture}
       \resumeItemListEnd
   
     \resumeSubheading
       {\href{https://imbleau.com/research/native_game_engine_2018.pdf}
-      {\myuline{Native game engine}}}{Aug 2018 -- May 2019}
-      {with Doctor William Kreahling}{WCU, North Carolina}
+      {\myuline{Native Java game engine}}}{Aug 2018 -- May 2019}
+      {with Dr. William Kreahling}{Cullowhee, North Carolina}
       \resumeItemListStart
-        \resumeItem{Learned various subjects: Game theory, game design, collision detection, software rendering, pixel processing (shaders), online networking}
-        \resumeItem{Optimized physics using calculus and separating axis theorem}
-        \resumeItem{Online networking play and communication implementation}
+        \resumeItem{Demonstrate various subjects: game theory, design, collision detection, rendering, input, application-layer, networking}
+        \resumeItem{Implemented native calculus-based physics library}
+        \resumeItem{Multiplayer safety, chat, and play}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
-\fi
 
 %-----------PROGRAMMING SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: C/C++, Java, Python, SQL, Php, Javascript} \\
-     \textbf{Human Languages}{: English, Danish} \\
-     \textbf{Developer Tools}{: Git, Google Cloud Platform, VS Code, Visual Studio, Eclipse, IntelliJ, Ansible}
-    \textbf{Platforms}{: Windows, RHEL 6/7/8, Fedora, CentOS, Ubuntu, Raspbian, OSX }
-     }
-     }
+    \small{
+      \item{
+        \textbf{Languages}{: Rust, Java, Python, Php, JS, C, C++, SQL, HTML/CSS} \\
+        \textbf{Human Languages}{: English, Danish} \\
+        \textbf{Developer Tools}{: Git, Google Cloud Platform, Visual Studio Code, Visual Studio, Eclipse, IntelliJ, Ansible, Phpmyadmin, cPanel}
+	\textbf{Frameworks}{: Tensorflow, .NET (\& Core), Django, Selenium, WordPress } \\
+	\textbf{Platforms}{: Windows, RHEL 6/7/8, Fedora, CentOS, Ubuntu❤, Raspbian, OSX }
+      }
+    }
  \end{itemize}
-
-
-%
-\iffalse
-% \iftrue
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Python, C/C++, SQL, JavaScript, HTML/CSS, R} \\
-     \textbf{Frameworks}{: WordPress} \\
-     \textbf{Developer Tools}{: Jupyter Notebooks, Git, Google Cloud Platform, VS Code, Amazon AWS} \\
-     \textbf{Libraries}{: pandas, plotly}
-    }}
- \end{itemize}
-\fi
 
 %-------------------------------------------
 \end{document}
+
 
