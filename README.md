@@ -2,7 +2,7 @@
 A repository containing the TeX source of Spencer Imbleau's résumé.
 
 # Dependencies
-Linux: `sudo apt install xelatex` \
+Linux: `sudo apt install texlive-xetex` \
 Windows: http://www.texts.io/support/0002/ \
 MacOs: Not recommended, attempt at your leisure.
 
