@@ -34,7 +34,7 @@
 
 %----------FONT OPTIONS----------
 \usepackage{fontspec}
-\usepackage{fontawesome5}
+\usepackage{fontawesome}
 
 \setmainfont{XCharter}
 
@@ -143,93 +143,16 @@ UprightFont = TitleFont
 +1 (704) 747-5126
 
 %-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Appalachian State University}{North Carolina}
-      {M.Sc. Computer Science, Concentration in Systems, 3.7}{Aug 2020 -- Present}
-      \resumeItemListStart
-        \resumeItem{ABET Accreditation}
-        \resumeItem{Expected Graduation: May 2022}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Western Carolina University}{North Carolina}
-      {B.Sc. Computer Science, Minor in Mathematics, 3.1}{Aug 2015 -- May 2019}
-      \resumeItemListStart
-        \resumeItem{ABET Accreditation}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\input{education}
 
 %-----------EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-  
-      \resumeSubheading
-      {Research Assistant}{Jun 2021 -- Present}
-      {Appalachian State University}{Boone, NC, USA}
-      \resumeItemListStart
-	\resumeItem{Conducting analysis on GPU vector graphic rendering techniques with a focus on interactivity}
-	\resumeItem{Bench-marking novel approaches to rendering vector graphics leveraging GPU architecture, algorithms, and data structures}
-      \resumeItemListEnd
+\input{experience}
 
-    \resumeSubheading
-      {Teaching Assistant}{Aug 2020 -- Present}
-      {Appalachian State University}{Boone, NC, USA}
-      \resumeItemListStart
-        \resumeItem{Instructed undergraduate computer science laboratory classrooms}
-        \resumeItem{Assisted in student success through office hours}
-      \resumeItemListEnd
-      
-    \resumeSubheading
-      {Systems Engineer I}{May 2019 -- Jun 2020}
-      {Ingles-Markets, Inc.}{Black Mountain, NC, USA}
-      \resumeItemListStart
-	\resumeItem{Worked in an Information Technology environment under the Unix Engineering team.}
-	\resumeItem{Programmed external production software and internal tooling for corporate employees}
-	\resumeItem{Maintained an on-site data center.}
-      \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------RESEARCH-----------
-\section{Projects}
-  \resumeSubHeadingListStart
-  
-    \resumeSubheading
-      {\href{https://github.com/simbleau/nvtx-rs}
-      {\myuline{'nvtx-rs', a GPU/CPU Profiler FFI Binding for NVTX in Rust}}}{May 2021 -- Present}
-      {with Dr. Mitch Parry}{Boone, North Carolina}
-      \resumeItemListStart
-        \resumeItem{Toolkit for GPU and CPU profiling and analysis with event annotations}
-	\resumeItem{Wraps the NVIDIA® Tools Extension SDK (NVTX) with FFI}
-        \resumeItem{Leading open-source initiative and working in the open}
-      \resumeItemListEnd
-  
-    \resumeSubheading
-      {\href{https://imbleau.com/research/native_game_engine_2018.pdf}
-      {\myuline{Native Java game engine}}}{Aug 2018 -- May 2019}
-      {with Dr. William Kreahling}{Cullowhee, North Carolina}
-      \resumeItemListStart
-        \resumeItem{Demonstrate various subjects: game theory, design, collision detection, rendering, input, application-layer, networking}
-        \resumeItem{Implemented native calculus-based physics library}
-        \resumeItem{Multiplayer safety, chat, and play}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
+%------------PROJECTS------------
+\input{projects}
 
 %-----------PROGRAMMING SKILLS-----------
-\section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{
-      \item{
-        \textbf{Languages}{: Rust, C, Java, Python, Php, C++, SQL, JS, HTML/CSS} \\
-        \textbf{Human Languages}{: English, Danish} \\
-        \textbf{Developer Tools}{: Git, Google Cloud Platform, Visual Studio Code, Visual Studio, Eclipse, IntelliJ, PhpMyAdmin, cPanel, Ansible} \\
-	\textbf{Frameworks}{: Tensorflow, .NET (\& Core), Django, Selenium, WordPress } \\
-	\textbf{Platforms}{: Windows, RHEL 6/7/8, Fedora, CentOS, Ubuntu, Raspbian, OSX }
-      }
-    }
- \end{itemize}
+\input{skills}
 
 %-------------------------------------------
 \end{document}
