@@ -3,8 +3,8 @@ A repository containing the TeX source of Spencer Imbleau's résumé.
 
 # Dependencies
 Linux: `sudo apt install texlive-xetex texlive-fonts-extra` \
-Windowsm: Not supported, up to the user. \
-MacOs: Not supported, up to the user.
+Windows: Not supported, up to the user. \
+MacOS: Not supported, up to the user.
 
 ## Building the PDF
 This command ignores errors and will attempt to produce a PDF artifact from the resume.tex. \
