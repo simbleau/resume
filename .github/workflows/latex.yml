@@ -12,8 +12,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_use_xelatex: true
-          root_file: |
-            resume.tex
+          root_file: resume.tex
 
       - name: release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
