@@ -1,25 +1,29 @@
 \documentclass[a4paper,11pt]{article}
 
 % Packages
-% To use colors
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{fancyhdr} % For fancy page style
+\usepackage[empty]{fullpage} % For full page layout
 
-% To modify itemize
-\usepackage{enumitem}
+\usepackage{changepage} % For page layout control
+\usepackage[margin = 1in]{geometry} % For margin control
+\usepackage{titlesec} % For title control
+\usepackage{ulem} % For text underline control
+\usepackage{enumitem} % For itemize control
+\usepackage{tabularx} % For tabular control
 
+\usepackage{graphicx} % For graphics
+\usepackage[usenames,dvipsnames]{xcolor} % For colors
+\usepackage{fontspec} % For fonts
+\usepackage{fontawesome5} % For icons and emojis
+\usepackage{contour} % For text contouring
 
-% Graphics
-\usepackage{graphicx}
+% Pre-tasks
 \graphicspath{ {./assets/} }
 
-% Text
-\usepackage{contour}
+% Text formatting
 \contourlength{0.8pt}
-\usepackage{ulem}
 \renewcommand{\ULdepth}{3.8pt}
 % Fonts
-\usepackage{fontspec}
-\usepackage{fontawesome5}
 \newfontfamily{\titlefont}{Roboto-Black}[
 Path = fonts/Roboto/,
 Extension = .ttf,
@@ -36,14 +40,12 @@ BoldItalicFont = Roboto-BoldItalic,
 
 % Formatting
 % Clear all header and footer fields
-\usepackage{fancyhdr}
 \fancyhf{}
 \fancyfoot{}
 % Renew head and footer dimensions
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 % Renew section format
-\usepackage{titlesec}
 \titleformat{\section}{
     {\color{gray}\titlerule} \vspace{-5pt}
     \vspace{8pt}\scshape\raggedright\Large\normalfont\bfseries
@@ -53,7 +55,6 @@ BoldItalicFont = Roboto-BoldItalic,
 \usepackage[hidelinks]{hyperref}
 \urlstyle{same}
 % Table separation
-\usepackage{tabularx}
 \setlength{\tabcolsep}{0in}
 
 %-------------------------
@@ -99,9 +100,6 @@ BoldItalicFont = Roboto-BoldItalic,
 %-------------------------
 
 % Page
-\usepackage[empty]{fullpage}
-\usepackage{changepage}
-\usepackage[margin = 1in]{geometry}
 \pagestyle{fancy}
 \raggedright
 \begin{document}
