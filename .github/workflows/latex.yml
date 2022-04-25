@@ -15,9 +15,13 @@ jobs:
           root_file: |
             resume.tex
 
-      - name: upload resume
+      - name: release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/create-release@v1
         with:
-          path: resume.pdf
-          name: Imbleau.pdf
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: latest
+          name: Résumé
+          files: resume.pdf
