@@ -1,1 +1,3 @@
-aux/
+# Ignore build files
+/aux/
+/Imbleau.pdf
