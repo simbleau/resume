@@ -15,6 +15,7 @@ jobs:
           root_file: resume.tex
 
       - name: delete-release
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: dev-drprasad/delete-tag-and-release@v0.2.0
         with:
           delete_release: true
