@@ -1,6 +1,7 @@
 pdf: clean
 	mkdir ./aux
-	xelatex -output-dir ./aux -interaction nonstopmode ./resume.tex
+	latexmk -xelatex -output-directory ./aux ../resume.tex \
+		||   xelatex -output-directory ./aux ../resume.tex
 	mv ./aux/resume.pdf ./Imbleau.pdf
 
 clean:
