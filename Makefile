@@ -1,13 +1,8 @@
-pdf:	clean 
-	xelatex -interaction nonstopmode ./resume.tex || true
-	mv *.pdf Imbleau.pdf
-	rm -f ./*log ./*.out ./*.aux
+pdf: clean
+	mkdir ./aux
+	xelatex -output-dir ./aux -interaction nonstopmode ./resume.tex
+	mv ./aux/resume.pdf ./Imbleau.pdf
 
-test:	clean 
-	xelatex -halt-on-error ./resume.tex
-
-lint: 
-	rm -f ./*log ./*.out ./*.aux
-
-clean:	lint 
-	rm -f ./*.pdf
+clean:
+	rm -rf ./aux
+	rm -f ./Imbleau.pdf
