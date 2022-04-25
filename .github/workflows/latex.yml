@@ -14,13 +14,22 @@ jobs:
           latexmk_use_xelatex: true
           root_file: resume.tex
 
-      - name: release
+      - name: push-release-source
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
         with:
           draft: false
           prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
           tag_name: latest
           name: Résumé
-          files: resume.pdf
+
+      - name: push-release-pdf
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          prerelease: false
+          tag_name: latest
+          name: Résumé
+          files: |
+            resume.pdf
