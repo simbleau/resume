@@ -14,16 +14,13 @@ jobs:
           latexmk_use_xelatex: true
           root_file: resume.tex
 
-      - name: push-release-source
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: softprops/action-gh-release@v1
+      - name: delete-release
+        uses: dev-drprasad/delete-tag-and-release@v0.2.0
         with:
-          draft: false
-          prerelease: false
+          delete_release: true
           tag_name: latest
-          name: Résumé
 
-      - name: push-release-pdf
+      - name: release-pdf
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
         with:
