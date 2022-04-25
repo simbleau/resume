@@ -1,11 +1,6 @@
 name: latex-build
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+on: [push]
 
 jobs:
   build:
@@ -13,8 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: xu-cheng/latex-action@v2
+      - name: build latex
+        uses: xu-cheng/latex-action@v2
         with:
           latexmk_use_xelatex: true
           root_file: |
             resume.tex
+
+      - name: upload resume
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: actions/upload-artifact@v3
+        with:
+          path: resume.pdf
