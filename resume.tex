@@ -1,20 +1,12 @@
 \documentclass[a4paper,11pt]{article}
 
 % Packages
-\usepackage[empty]{fullpage}
-\usepackage{changepage}
-\usepackage{latexsym}
-\usepackage{titlesec}
-\usepackage{marvosym}
+% To use colors
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{verbatim}
+
+% To modify itemize
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage[margin = 1in]{geometry}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{wrapfig}
+
 
 % Graphics
 \usepackage{graphicx}
@@ -43,24 +35,25 @@ BoldItalicFont = Roboto-BoldItalic,
 ]
 
 % Formatting
-% Page
-\pagestyle{fancy}
-\raggedright
 % Clear all header and footer fields
+\usepackage{fancyhdr}
 \fancyhf{}
 \fancyfoot{}
 % Renew head and footer dimensions
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 % Renew section format
+\usepackage{titlesec}
 \titleformat{\section}{
     {\color{gray}\titlerule} \vspace{-5pt}
     \vspace{8pt}\scshape\raggedright\Large\normalfont\bfseries
 }{}{0pt}{}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 % URLs
+\usepackage[hidelinks]{hyperref}
 \urlstyle{same}
 % Table separation
+\usepackage{tabularx}
 \setlength{\tabcolsep}{0in}
 
 %-------------------------
@@ -105,7 +98,12 @@ BoldItalicFont = Roboto-BoldItalic,
 % RESUME
 %-------------------------
 
-
+% Page
+\usepackage[empty]{fullpage}
+\usepackage{changepage}
+\usepackage[margin = 1in]{geometry}
+\pagestyle{fancy}
+\raggedright
 \begin{document}
 
 %-------------------------
