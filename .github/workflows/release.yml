@@ -1,9 +1,12 @@
-name: latex-build
+name: release
 
-on: [push]
+on:
+  push:
+    tags:
+      - "*"
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,15 +26,11 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./src/resume.tex
 
-      # Replace latest if push to main
-      - name: Replace latest
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      # Upload PDF
+      - name: Upload PDF
         uses: softprops/action-gh-release@v1
         with:
           draft: false
           prerelease: false
-          tag_name: latest
-          name: Résumé
           files: |
             resume.pdf
-            # TODO : Replace source.tar.gz, source.zip
