@@ -1,4 +1,6 @@
 # Résumé
+![build](https://img.shields.io/github/workflow/status/simbleau/resume/latex-build)
+![last update](https://img.shields.io/github/release-date/simbleau/resume?label=updated) \
 A repository containing the TeX source of Spencer Imbleau's résumé.
 
 # Dependencies
