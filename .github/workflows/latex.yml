@@ -30,9 +30,11 @@ jobs:
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
         with:
-          draft: false
-          prerelease: false
           tag_name: latest
           name: Résumé
+          body: "The latest official résumé of Spencer C. Imbleau."
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: true
           files: |
             resume.pdf

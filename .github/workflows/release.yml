@@ -33,5 +33,6 @@ jobs:
         with:
           draft: false
           prerelease: false
+          fail_on_unmatched_files: true
           files: |
             resume.pdf
