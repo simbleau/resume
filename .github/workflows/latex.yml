@@ -24,6 +24,7 @@ jobs:
           root_file: ./src/resume.tex
 
       # Replace latest if push to main
+      # TODO : Replace source.tar.gz, source.zip
       - name: Replace latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
@@ -34,4 +35,3 @@ jobs:
           name: Résumé
           files: |
             resume.pdf
-            # TODO : Replace source.tar.gz, source.zip
