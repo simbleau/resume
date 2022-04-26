@@ -57,9 +57,7 @@ BoldItalicFont = Roboto-BoldItalic,
 % Table separation
 \setlength{\tabcolsep}{0in}
 
-%-------------------------
-% COMMANDS
-%-------------------------
+% Custom commands
 % Add underline command
 \newcommand{\myuline}[1]{%
   \uline{\phantom{#1}}%
@@ -95,18 +93,14 @@ BoldItalicFont = Roboto-BoldItalic,
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------
-% RESUME
-%-------------------------
-
-% Page
+% Page formatting
 \pagestyle{fancy}
 \raggedright
 \begin{document}
 
-%-------------------------
-% HEADING
-%-------------------------
+% Resume content begins here
+
+% Heading
 {\titlefont \Huge Spencer C. Imbleau \small \textit{(he/him/his)}}
 \\
 
@@ -131,17 +125,11 @@ BoldItalicFont = Roboto-BoldItalic,
 \thinspace \thinspace
 \small{+1 (704) 747-5126}
 
-%-----------EDUCATION-----------
-\input{education}
-
-%-----------EXPERIENCE-----------
-\input{experience}
-
-%-----------SKILLS-----------
-\input{skills}
-
-%------------PROJECTS------------
-\input{projects}
+% Data
+\input{sections/education}
+\input{sections/experience}
+\input{sections/skills}
+\input{sections/projects}
 
 %-------------------------------------------
 \end{document}
