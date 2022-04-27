@@ -13,7 +13,7 @@ jobs:
         id: cache-pdf
         uses: actions/cache@v3
         with:
-          path: ./aux/resume.pdf
+          path: ./resume.pdf
           key: resume-${{ hashFiles('./src') }}
 
       # Build resume
