@@ -24,6 +24,7 @@ jobs:
         if: steps.cache-pdf.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
+          latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./src/resume.tex
 
