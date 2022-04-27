@@ -23,6 +23,7 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
 ## Building
+- Build (résumé + cv): `make all`
 - Build (résumé): `make resume`
 - Build (cv): `make cv`
 - Clean: `make clean`
