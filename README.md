@@ -1,19 +1,34 @@
-# Résumé
-[![build](https://img.shields.io/github/workflow/status/simbleau/resume/latex-build/main)](https://github.com/simbleau/resume/actions/workflows/latex.yml)
-[![last release](https://img.shields.io/github/release-date/simbleau/resume?label=last%20release)](https://github.com/simbleau/resume/releases)
-[![last update](https://img.shields.io/github/last-commit/simbleau/resume/main?label=last%20commit)](#) \
-A repository containing the TeX source of Spencer Imbleau's résumé.
+<div align="center">
 
-# Dependencies
-Linux: `sudo apt install texlive-xetex texlive-fonts-extra` \
-Windows: Not supported, up to the user. \
-MacOS: Not supported, up to the user.
+# 📋 Résumé
+[![sponsor me](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/simbleau)
+[![buy me a coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/simbleau)
+[![build](https://img.shields.io/github/workflow/status/simbleau/resume/latex-build/main?style=for-the-badge&logo=github)](https://github.com/simbleau/resume/actions/workflows/latex.yml)
+[![last release](https://img.shields.io/github/release-date/simbleau/resume?style=for-the-badge&logo=github&label=last%20release)](https://github.com/simbleau/resume/releases)
 
-## Building the PDF
-This command ignores errors and will attempt to produce a PDF artifact from the resume.tex. \
-Command: `make pdf`
+A repository containing the TeX source of Spencer Imbleau's résumé and curriculum vitae.\
+_Managed with GitHub Actions_ 🤖
 
-## Clean
-This command removes ALL artifacts, including the PDF artifact. \
-Command: `make clean`
+</div>
 
+---
+
+# Deployment
+Deployment is automated by GitHub Actions.
+- Changes to `main` trigger a new release of the [latest résumé](https://github.com/simbleau/resume/releases/tag/latest).
+- New [tagged releases](https://github.com/simbleau/resume/tags) also trigger artifact upload.
+
+---
+
+# Local Builds
+## Dependencies
+- [TeXLive, full](https://www.tug.org/texlive/)
+- [Make](https://www.gnu.org/software/make/)
+## Building
+- Build (résumé): `make pdf`
+- Clean: `make clean`
+
+---
+
+## 🔏 License
+This project is [MIT](./LICENSE) licensed.
