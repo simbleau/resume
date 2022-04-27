@@ -1,3 +1,6 @@
+# Ignore VS Code
+/.vscode/
+
 # Ignore build files
 /aux/
 /resume.pdf
