@@ -1,4 +1,4 @@
-name: Release résumé and cirriculum vitae
+name: Release résumé and cv
 
 on:
   push:

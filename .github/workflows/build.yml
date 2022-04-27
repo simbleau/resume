@@ -1,4 +1,4 @@
-name: Build résumé and cirriculum vitae
+name: Build résumé and cv
 
 on: [push]
 
