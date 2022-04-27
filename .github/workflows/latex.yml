@@ -26,7 +26,12 @@ jobs:
           root_file: ./src/resume.tex
 
       # Replace latest if push to main
-      # TODO : Replace source.tar.gz, source.zip
+      - name: Delete latest release
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: latest
       - name: Replace latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
