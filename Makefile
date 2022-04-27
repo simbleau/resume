@@ -1,7 +1,7 @@
 pdf: clean
 	mkdir ./aux
-	latexmk -xelatex -output-directory ./aux ./src/resume.tex \
-		||   xelatex -output-directory ./aux ./src/resume.tex
+	latexmk -xelatex -shell-escape -output-directory ./aux ./src/resume.tex \
+		||   xelatex --shell-escape -output-directory ./aux ./src/resume.tex
 	mv ./aux/resume.pdf ./Imbleau.pdf
 
 clean:
