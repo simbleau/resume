@@ -11,12 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Install Inkscape for SVG files
-      - name: Install Inkscape
-        run: |
-          sudo apt-get install -y inkscape
-          inkscape -V
-
       # Cache PDF
       - name: PDF Cache
         id: cache-pdf
