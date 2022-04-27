@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Cache résumé
-      - name: Cache resume
+      # Cache Résumé
+      - name: Cache résumé
         id: cache-resume
         uses: actions/cache@v3
         with:
@@ -20,7 +20,7 @@ jobs:
           key: resume-${{ hashFiles('./resume') }}
 
       # Build résumé
-      - name: Build source (latex)
+      - name: Build résumé (latex)
         if: steps.cache-resume.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
@@ -28,8 +28,16 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./resume.tex
 
-      # Upload PDF
-      - name: Upload résumé PDF
+      # Cache CV
+      - name: Cache CV
+        id: cache-cv
+        uses: actions/cache@v3
+        with:
+          path: ./cv.pdf
+          key: cv-${{ hashFiles('./cv') }}
+
+      # Upload PDFs
+      - name: Upload PDFs
         uses: softprops/action-gh-release@v1
         with:
           draft: false
@@ -37,3 +45,4 @@ jobs:
           fail_on_unmatched_files: true
           files: |
             resume.pdf
+            cv.pdf
