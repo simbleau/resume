@@ -1,4 +1,4 @@
-name: release
+name: Release résumé and cirriculum vitae
 
 on:
   push:
@@ -11,25 +11,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Cache PDF
-      - name: PDF Cache
-        id: cache-pdf
+      # Cache résumé
+      - name: Cache resume
+        id: cache-resume
         uses: actions/cache@v3
         with:
           path: ./resume.pdf
-          key: resume-${{ hashFiles('./src') }}
+          key: resume-${{ hashFiles('./resume') }}
 
-      # Build resume
+      # Build résumé
       - name: Build source (latex)
-        if: steps.cache-pdf.outputs.cache-hit != 'true'
+        if: steps.cache-resume.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./src/resume.tex
+          root_file: ./resume.tex
 
       # Upload PDF
-      - name: Upload PDF
+      - name: Upload résumé PDF
         uses: softprops/action-gh-release@v1
         with:
           draft: false
