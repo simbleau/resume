@@ -1,13 +1,13 @@
 <div align="center">
 
-# 📋 Résumé
+# 📋 Résumé + CV
 [![sponsor me](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/simbleau)
 [![buy me a coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/simbleau)
-[![build](https://img.shields.io/github/workflow/status/simbleau/resume/latex-build/main?style=for-the-badge&logo=github)](https://github.com/simbleau/resume/actions/workflows/latex.yml)
-[![last release](https://img.shields.io/github/release-date/simbleau/resume?style=for-the-badge&logo=github&label=last%20release)](https://github.com/simbleau/resume/releases)
+[![build](https://img.shields.io/github/workflow/status/simbleau/resume/build/main?style=for-the-badge&logo=github&label=Build)](https://github.com/simbleau/resume/actions/workflows/build.yml)
+[![résumé last release](https://img.shields.io/github/release-date/simbleau/resume?style=for-the-badge&logo=github&label=Last%20Release)](https://github.com/simbleau/resume/releases)
 
 A repository containing the TeX source of Spencer Imbleau's résumé and curriculum vitae.\
-_Managed with GitHub Actions_
+_Tested and deployed with GitHub Actions_
 
 </div>
 
@@ -23,7 +23,8 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
 ## Building
-- Build (résumé): `make pdf`
+- Build (résumé): `make resume`
+- Build (cv): `make cv`
 - Clean: `make clean`
 
 ---
