@@ -1,9 +1,12 @@
-pdf: clean
+resume: clean
 	mkdir ./aux
-	latexmk -xelatex -shell-escape -output-directory ./aux ./src/resume.tex \
-		||   xelatex --shell-escape -output-directory ./aux ./src/resume.tex
-	mv ./aux/resume.pdf ./Imbleau.pdf
+	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
+		||   xelatex --shell-escape -output-directory ./aux ./resume.tex
+	mv ./aux/resume.pdf ./resume.pdf
+
+cv:
+	echo "TODO"
 
 clean:
 	rm -rf ./aux
-	rm -f ./Imbleau.pdf
+	rm -f ./resume.pdf
