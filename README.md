@@ -7,20 +7,18 @@
 [![last release](https://img.shields.io/github/release-date/simbleau/resume?style=for-the-badge&logo=github&label=last%20release)](https://github.com/simbleau/resume/releases)
 
 A repository containing the TeX source of Spencer Imbleau's résumé and curriculum vitae.\
-_Managed with GitHub Actions_ 🤖
+_Managed with GitHub Actions_
 
 </div>
 
 ---
 
-# Deployment
-Deployment is automated by GitHub Actions.
-- Changes to `main` trigger a new release of the [latest résumé](https://github.com/simbleau/resume/releases/tag/latest).
-- New [tagged releases](https://github.com/simbleau/resume/tags) also trigger artifact upload.
+# 🤖 Deployment
+Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/actions).
+- Pushes to `main` trigger a new release of the [latest résumé](https://github.com/simbleau/resume/releases/tag/latest).
+- Manually pushed [tags](https://github.com/simbleau/resume/tags) also trigger workflows to upload artifacts.
 
----
-
-# Local Builds
+# 🔧 Local Builds
 ## Dependencies
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
