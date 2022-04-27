@@ -1,0 +1,15 @@
+% -----------------
+% Résumé formatting
+% -----------------
+
+% Renew section format
+\titleformat{\section}{
+    {\color{gray}\titlerule} \vspace{-5pt}
+    \vspace{8pt}\scshape\raggedright\Large\normalfont\bfseries
+}{}{0pt}{}
+
+% Renew itemize format
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% Remove tabular column separation
+\setlength{\tabcolsep}{0in}

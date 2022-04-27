@@ -1,7 +1,7 @@
-% ---------------------------
-% Resume - Spencer C. Imbleau
-% https://spencer.imbleau.com
-% ---------------------------
+% ----------------------------------
+%     Résumé - Spencer C. Imbleau
+% https://spencer.imbleau.com/resume
+% ----------------------------------
 \documentclass[a4paper,11pt]{article}
 
 % Packages
@@ -24,20 +24,25 @@
 \usepackage{anyfontsize} % For variable font sizes
 
 % Configure graphics
-\graphicspath{ {./src/static/graphics/} }
+\graphicspath{ {./resume/static/graphics/} }
 
-% Config fonts
-\input{src/config/fonts}
-\input{src/config/formatting}
-\input{src/config/commands}
+% Import common
+\input{./common/text}
+\input{./common/formatting}
+\input{./common/commands}
 
-% Resume contents
+% Import config
+\input{./resume/config/text}
+\input{./resume/config/formatting}
+\input{./resume/config/commands}
+
+% Résumé contents
 \begin{document}
-\input{src/sections/heading}
-\input{src/sections/education}
-\input{src/sections/experience}
-\input{src/sections/skills}
-\input{src/sections/projects}
+\input{./resume/sections/heading}
+\input{./resume/sections/education}
+\input{./resume/sections/experience}
+\input{./resume/sections/skills}
+\input{./resume/sections/projects}
 \end{document}
 
 
