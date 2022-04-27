@@ -32,7 +32,9 @@ jobs:
         with:
           delete_release: true
           tag_name: latest
-      - name: Replace latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Replace latest release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v1
         with:
