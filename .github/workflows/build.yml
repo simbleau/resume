@@ -1,4 +1,4 @@
-name: Build résumé and cv
+name: build
 
 on: [push]
 
