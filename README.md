@@ -15,7 +15,7 @@ _Tested and deployed with GitHub Actions_
 
 # 🤖 Deployment
 Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/actions).
-- Pushes to `main` trigger a new release of the [latest résumé](https://github.com/simbleau/resume/releases/tag/latest).
+- Pushes to `main` trigger a new release of the [latest résumé and cv](https://github.com/simbleau/resume/releases/tag/latest).
 - Manually pushed [tags](https://github.com/simbleau/resume/tags) also trigger workflows to upload artifacts.
 
 # 🔧 Local Builds
