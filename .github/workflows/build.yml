@@ -23,7 +23,7 @@ jobs:
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./resume.tex
+          root_file: ./resume/resume.tex
 
       # Cache CV
       - name: Cache CV
@@ -40,7 +40,7 @@ jobs:
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./cv.tex
+          root_file: ./cv/cv.tex
 
       # Replace latest if push to main
       - name: Delete latest release
