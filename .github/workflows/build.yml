@@ -35,7 +35,7 @@ jobs:
 
       # Build CV
       - name: Build CV (latex)
-        if: steps.cache-resume.outputs.cache-hit != 'true'
+        if: steps.cache-cv.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
