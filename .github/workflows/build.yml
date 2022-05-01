@@ -42,6 +42,23 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./cv/cv.tex
 
+      # Cache Coverletter
+      - name: Cache Coverletter
+        id: cache-coverletter
+        uses: actions/cache@v3
+        with:
+          path: ./coverletter.pdf
+          key: cv-${{ hashFiles('./coverletter') }}
+
+      # Build Coverletter
+      - name: Build Coverletter (latex)
+        if: steps.cache-coverletter.outputs.cache-hit != 'true'
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./coverletter/coverletter.tex
+
       # Replace latest if push to main
       - name: Delete latest release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -64,3 +81,4 @@ jobs:
           files: |
             resume.pdf
             cv.pdf
+            coverletter.pdf

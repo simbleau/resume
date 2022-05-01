@@ -1,4 +1,4 @@
-all: resume cv
+all: resume cv coverletter
 
 resume: clean
 	mkdir -p ./aux
@@ -11,6 +11,12 @@ cv: clean
 	latexmk -xelatex -shell-escape -output-directory ./aux ./cv/cv.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./cv/cv.tex
 	mv ./aux/cv.pdf ./cv.pdf
+
+coverletter: clean
+	mkdir -p ./aux
+	latexmk -xelatex -shell-escape -output-directory ./aux ./coverletter/coverletter.tex \
+		|| xelatex --shell-escape -output-directory ./aux ./coverletter/coverletter.tex
+	mv ./aux/coverletter.pdf ./coverletter.pdf
 
 clean:
 	rm -rf ./aux
