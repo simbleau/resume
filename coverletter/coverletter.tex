@@ -21,6 +21,7 @@
 \usepackage{contour} % For text contouring
 
 \usepackage{anyfontsize} % For variable font sizes
+\usepackage{eso-pic} % For flexible image placement
 
 % Configure graphics
 \graphicspath{ {./coverletter/static/graphics/} }
@@ -37,7 +38,8 @@
 
 % Coverletter contents
 \begin{document}
-\input{./common/sections/heading}
+%\input{./common/sections/heading}
+\input{./common/sections/heading_microsoft}
 \input{./coverletter/sections/letter}
 \end{document}
 
