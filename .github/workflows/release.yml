@@ -10,34 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Cache Résumé
-      - name: Cache résumé
-        id: cache-resume
-        uses: actions/cache@v3
-        with:
-          path: ./resume.pdf
-          key: resume-${{ hashFiles('./resume') }}
-
       # Build résumé
       - name: Build résumé (latex)
-        if: steps.cache-resume.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./resume/resume.tex
 
-      # Cache CV
-      - name: Cache CV
-        id: cache-cv
-        uses: actions/cache@v3
-        with:
-          path: ./cv.pdf
-          key: cv-${{ hashFiles('./cv') }}
-
       # Build CV
       - name: Build CV (latex)
-        if: steps.cache-cv.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
