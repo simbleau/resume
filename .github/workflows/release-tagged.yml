@@ -8,10 +8,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       # Build résumé
-      - name: Build résumé (latex)
+      - name: Build résumé
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
@@ -19,24 +20,15 @@ jobs:
           root_file: ./resume/resume.tex
 
       # Build CV
-      - name: Build CV (latex)
+      - name: Build CV
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./cv/cv.tex
 
-      # Cache Coverletter
-      - name: Cache Coverletter
-        id: cache-coverletter
-        uses: actions/cache@v3
-        with:
-          path: ./coverletter.pdf
-          key: cv-${{ hashFiles('./coverletter') }}
-
       # Build Coverletter
-      - name: Build Coverletter (latex)
-        if: steps.cache-coverletter.outputs.cache-hit != 'true'
+      - name: Build coverletter
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true

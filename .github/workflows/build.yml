@@ -6,67 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Build résumé
-      - name: Build résumé (latex)
+      - name: Build résumé
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./resume/resume.tex
 
-      # Build CV
-      - name: Build CV (latex)
+      - name: Build CV
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./cv/cv.tex
 
-      # Build Coverletter
-      - name: Build Coverletter (latex)
+      - name: Build coverletter
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./coverletter/coverletter.tex
-
-      # Replace latest if push to main
-      - name: Delete latest release
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: dev-drprasad/delete-tag-and-release@v0.2.0
-        with:
-          delete_release: true
-          tag_name: latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push latest résumé and cv
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: latest
-          name: Résumé + CV
-          body: "The latest official résumé and cirriculum vitae of Spencer C. Imbleau."
-          draft: false
-          prerelease: false
-          fail_on_unmatched_files: true
-          files: |
-            resume.pdf
-            cv.pdf
-            coverletter.pdf
-
-      - name: Make dist/
-        run: |
-          mkdir dist/
-          mv resume.pdf dist/
-          mv cv.pdf dist/
-          mv coverletter.pdf dist/
-          mv embed.html dist/
-
-      - name: Deploy, Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/
