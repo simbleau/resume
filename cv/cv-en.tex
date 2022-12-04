@@ -1,6 +1,7 @@
-% --------------------------------
-% Coverletter - Spencer C. Imbleau
-% --------------------------------
+% ------------------------------
+%    CV - Spencer C. Imbleau
+% https://spencer.imbleau.com/cv
+% ------------------------------
 \documentclass[a4paper,11pt]{article}
 
 % Packages
@@ -20,25 +21,27 @@
 \usepackage{fontawesome5} % For icons and emojis
 \usepackage{contour} % For text contouring
 
-\usepackage{eso-pic} % For flexible image placement
-
 % Configure graphics
-\graphicspath{ {./coverletter/assets/} }
+\graphicspath{ {./cv/assets/} }
 
 % Import common
 \input{./common/config/fonts}
 \input{./common/config/formatting}
 \input{./common/config/commands}
 
-% Import coverletter config
-\input{./coverletter/config/fonts}
-\input{./coverletter/config/formatting}
-\input{./coverletter/config/commands}
+% Import CV config
+\input{./cv/config/fonts}
+\input{./cv/config/formatting}
+\input{./cv/config/commands}
 
-% Coverletter contents
+% CV contents
 \begin{document}
-\input{./common/sections/heading}
-\input{./coverletter/sections/letter}
+\input{./common/sections/heading-en}
+\input{./cv/sections/profile-en}
+\input{./common/sections/education-en}
+\input{./common/sections/career-en}
+\input{./common/sections/research-en}
+\input{./common/sections/skills-en}
 \end{document}
 
 

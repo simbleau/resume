@@ -1,0 +1,44 @@
+% --------------------------------
+% Coverletter - Spencer C. Imbleau
+% --------------------------------
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage{fancyhdr} % For fancy page style
+\usepackage[empty]{fullpage} % For full page layout
+
+\usepackage{changepage} % For page layout control
+\usepackage[margin = 1in]{geometry} % For margin control
+\usepackage{titlesec} % For title control
+\usepackage{ulem} % For text underline control
+\usepackage{enumitem} % For itemize control
+\usepackage{tabularx} % For tabular control
+
+\usepackage{graphicx} % For graphics
+\usepackage{xcolor} % For colors
+\usepackage{fontspec} % For fonts
+\usepackage{fontawesome5} % For icons and emojis
+\usepackage{contour} % For text contouring
+
+\usepackage{eso-pic} % For flexible image placement
+
+% Configure graphics
+\graphicspath{ {./coverletter/assets/} }
+
+% Import common
+\input{./common/config/fonts}
+\input{./common/config/formatting}
+\input{./common/config/commands}
+
+% Import coverletter config
+\input{./coverletter/config/fonts}
+\input{./coverletter/config/formatting}
+\input{./coverletter/config/commands}
+
+% Coverletter contents
+\begin{document}
+\input{./common/sections/heading-en}
+\input{./coverletter/sections/letter-en}
+\end{document}
+
+
