@@ -6,79 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Cache Résumé
-      - name: Cache résumé
-        id: cache-resume
-        uses: actions/cache@v3
-        with:
-          path: ./resume.pdf
-          key: resume-${{ hashFiles('./resume') }}
-
-      # Build résumé
-      - name: Build résumé (latex)
-        if: steps.cache-resume.outputs.cache-hit != 'true'
+      - name: Build résumé
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./resume/resume.tex
 
-      # Cache CV
-      - name: Cache CV
-        id: cache-cv
-        uses: actions/cache@v3
-        with:
-          path: ./cv.pdf
-          key: cv-${{ hashFiles('./cv') }}
-
-      # Build CV
-      - name: Build CV (latex)
-        if: steps.cache-cv.outputs.cache-hit != 'true'
+      - name: Build CV
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./cv/cv.tex
 
-      # Cache Coverletter
-      - name: Cache Coverletter
-        id: cache-coverletter
-        uses: actions/cache@v3
-        with:
-          path: ./coverletter.pdf
-          key: cv-${{ hashFiles('./coverletter') }}
-
-      # Build Coverletter
-      - name: Build Coverletter (latex)
-        if: steps.cache-coverletter.outputs.cache-hit != 'true'
+      - name: Build coverletter
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
           root_file: ./coverletter/coverletter.tex
-
-      # Replace latest if push to main
-      - name: Delete latest release
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: dev-drprasad/delete-tag-and-release@v0.2.0
-        with:
-          delete_release: true
-          tag_name: latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Push latest résumé and cv
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: latest
-          name: Résumé + CV
-          body: "The latest official résumé and cirriculum vitae of Spencer C. Imbleau."
-          draft: false
-          prerelease: false
-          fail_on_unmatched_files: true
-          files: |
-            resume.pdf
-            cv.pdf
-            coverletter.pdf

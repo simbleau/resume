@@ -2,11 +2,14 @@
 % Common heading with employer sigil
 % ----------------------------------
 
-% Include heading icon
-\vc{\includegraphics[width=30pt, height=30pt, keepaspectratio]{./common/assets/current_employer}}
-\,
 % Write name
-\vc{\Huge\ceraproblack{Spencer C. Imbleau }\small\textit{He/Him}}
+\vc{\Huge\ceraproblack{Spencer C. Imbleau }\small\cerapro{He/Him}}
+\hfill
+% Include heading icon
+\definecolor{logocolor}{RGB}{0, 51, 221}
+\vc{\small\tradegothic\textcolor{logocolor}{@}}
+\vc{\includegraphics[height=15pt, keepaspectratio]{./common/assets/logo}}
+\vc{\includegraphics[width=30pt, height=30pt, keepaspectratio]{./common/assets/current_employer}}
 \medskip
 
 % Social icons
