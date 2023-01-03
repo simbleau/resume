@@ -26,9 +26,18 @@ jobs:
           root_file: ./cv.tex
 
       - name: Stage | PDFs
-        run: mkdir pub/
+        run: |
+          mkdir pub/
           mv resume.pdf pub/
           mv cv.pdf pub/
+
+      - name: Stage | Résumé
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/resume.html
+        env:
+          PDF: resume.pdf
 
       - name: Stage | Résumé, Index
         uses: cuchi/jinja2-action@v1.2.0
@@ -46,11 +55,11 @@ jobs:
         env:
           PDF: resume.pdf
 
-      - name: Stage | CV, Index
+      - name: Stage | CV
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/index.html.j2
-          output_file: pub/index.html
+          output_file: pub/cv.html
         env:
           PDF: cv.pdf
 
@@ -58,7 +67,7 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
-          output_file: pub/embed.html
+          output_file: pub/embed-cv.html
         env:
           PDF: cv.pdf
 
