@@ -1,35 +1,53 @@
-<div align="center">
-
 # 📋 Résumé + CV
-[![sponsor me](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/simbleau)
-[![buy me a coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/simbleau)
-[![build](https://img.shields.io/github/workflow/status/simbleau/resume/build/main?style=for-the-badge&logo=github&label=Build)](https://github.com/simbleau/resume/actions/workflows/build.yml)
-[![résumé last release](https://img.shields.io/github/release-date/simbleau/resume?style=for-the-badge&logo=github&label=Last%20Release)](https://github.com/simbleau/resume/releases)
-
-A repository containing the TeX source of Spencer Imbleau's résumé and curriculum vitae.\
-_Tested and deployed with GitHub Actions_
-
-</div>
+A repository containing the LaTeX source of Spencer Imbleau's résumé and curriculum vitae, tested and deployed with GitHub Actions.
 
 ---
+[![résumé last release](https://img.shields.io/github/release-date/simbleau/resume?logo=github&label=Last%20Release)](https://github.com/simbleau/resume/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/simbleau/resume/ci.yml?logo=github&label=CI)](https://github.com/simbleau/resume/actions/workflows/ci.yml)
 
 # 🤖 Deployment
 Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/actions).
-- Pushes to `main` trigger a new release of the [latest résumé and cv](https://github.com/simbleau/resume/releases/tag/latest).
-- Manually pushed [tags](https://github.com/simbleau/resume/tags) also trigger workflows to upload artifacts.
+- Pushes to `main` trigger a new release of the [latest résumé and cv](https://github.com/simbleau/resume/releases/tag/latest), in several formats.
+  | Artifact         | Link                                                                     | Mirror                                         |
+  | ---------------- | ------------------------------------------------------------------------ | ---------------------------------------------- |
+  | Résumé           | <https://simbleau.github.io/resume/resume.html>                          | <https://simbleau.github.io/resume/>           |
+  | Résumé, Embedded | <https://simbleau.github.io/resume/embed-resume.html>                    | <https://simbleau.github.io/resume/embed.html> |
+  | Résumé, Download | <https://github.com/simbleau/resume/releases/download/latest/resume.pdf> |                                                |
+  | CV               | <https://simbleau.github.io/resume/cv.html>                              |                                                |
+  | CV, Embedded     | <https://simbleau.github.io/resume/embed-cv.html>                        |                                                |
+  | CV, Download     | <https://github.com/simbleau/resume/releases/download/latest/cv.pdf>     |                                                |
+- Manually pushed [releases](https://github.com/simbleau/resume/releases) also trigger workflows to upload artifacts.
+  - Only tagged releases upload a coverletter artifact.
 
-# 🔧 Local Builds
+# 🔧 Building
 ## Dependencies
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
-## Building
-- Build (résumé + cv + cl): `make all`
-- Build (coverletter): `make coverletter`
-- Build (résumé): `make resume`
-- Build (cv): `make cv`
-- Clean: `make clean`
+## All
+Build the résumé, cirriculum vitae, and coverletter in one command:
+```bash
+make all
+```
+## Résumé
+Build the résumé:
+```bash
+make clean
+```
+## CV
+Build the cirriculum vitae:
+```bash
+make cv
+```
+## Coverletter
+Build the coverletter:
+```bash
+make coverletter
+```
+## Clean
+Purge all auxillary artifacts:
+```bash
+make clean
+```
 
----
-
-## 🔏 License
-This project is [MIT](./LICENSE) licensed.
+# 🔏 License
+This project is [MIT](./LICENSE) licensed. You are within your rights to fork my résumé and use it as your own, although you should probably change my name to yours!
