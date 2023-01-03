@@ -17,37 +17,33 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
   | CV, Embedded     | <https://simbleau.github.io/resume/embed-cv.html>                        |                                                |
   | CV, Download     | <https://github.com/simbleau/resume/releases/download/latest/cv.pdf>     |                                                |
 - Manually pushed [releases](https://github.com/simbleau/resume/releases) also trigger workflows to upload artifacts.
-  - Only tagged releases upload a coverletter artifact.
+  - Only tagged releases upload a cover letter artifact.
 
 # 🔧 Building
 ## Dependencies
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
-## All
-Build the résumé, cirriculum vitae, and coverletter in one command:
-```bash
-make all
-```
-## Résumé
-Build the résumé:
-```bash
-make clean
-```
-## CV
-Build the cirriculum vitae:
-```bash
-make cv
-```
-## Coverletter
-Build the coverletter:
-```bash
-make coverletter
-```
-## Clean
-Purge all auxillary artifacts:
-```bash
-make clean
-```
+## Commands
+- **Build the résumé**:
+  ```bash
+  make resume
+  ```
+- **Build the cirriculum vitae**:
+  ```bash
+  make cv
+  ```
+- **Build the cover letter**:
+  ```bash
+  make coverletter
+  ```
+- **Build all**:
+  ```bash
+  make all
+  ```
+- **Purge all**:
+  ```bash
+  make clean
+  ```
 
 # 🔏 License
 This project is [MIT](./LICENSE) licensed. You are within your rights to fork my résumé and use it as your own, although you should probably change my name to yours!
