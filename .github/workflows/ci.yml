@@ -1,6 +1,5 @@
-name: build
-
-on: [push]
+name: CI
+on: [push, pull_request]
 
 jobs:
   build:

@@ -1,5 +1,4 @@
-name: release-tagged
-
+name: Release Tagged
 on:
   release:
     types: [created]
