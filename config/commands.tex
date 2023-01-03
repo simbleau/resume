@@ -45,3 +45,22 @@
 \newcommand{\mySubHeadingListEnd}{\end{itemize}}
 \newcommand{\myItemListStart}{\begin{itemize}}
 \newcommand{\myItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Add lettering commands
+\newcommand{\letterparagraph}[1]{
+  \begin{adjustwidth}{0.15in}{0in}
+    #1
+    \medskip
+  \end{adjustwidth}
+}
+\newcommand{\opening}[1]{
+    \textit{Dear #1,\\}
+    \vspace{0.3cm}
+}
+\newcommand{\closing}{
+    \vspace{0.3cm}
+    \textit{Sincerely,\\}
+    {Spencer C. Imbleau\\}
+    \vspace{0.1cm}
+    \includegraphics[height=2in, width=2in, keepaspectratio]{signature}
+}

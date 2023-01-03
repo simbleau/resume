@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- The PDF viewer -->
+<!-- The PDF embedded page for embedded frames, with toolbars and navigation disabled -->
 <html>
 
 <head>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <embed src="resume.pdf" />
+    <embed src="{{ env['PDF'] }}#pagemode=none&toolbar=0&navpanes=0" />
 </body>
 
 </html>
