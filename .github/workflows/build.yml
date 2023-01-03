@@ -6,26 +6,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Setup | Checkout
         uses: actions/checkout@v3
 
-      - name: Build résumé
+      - name: Build | Résumé
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./resume/resume.tex
+          root_file: ./resume.tex
 
-      - name: Build CV
+      - name: Build | Cirriculum Vitae
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./cv/cv.tex
+          root_file: ./cv.tex
 
-      - name: Build coverletter
+      - name: Build | Coverletter
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./coverletter/coverletter.tex
+          root_file: ./coverletter.tex

@@ -8,27 +8,25 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Setup | Checkout
         uses: actions/checkout@v3
 
-      # Build résumé
-      - name: Build résumé
+      - name: Build | Résumé
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./resume/resume.tex
+          root_file: ./resume.tex
 
-      # Build CV
-      - name: Build CV
+      - name: Build | Cirriculum Vitae
         uses: xu-cheng/latex-action@v2
         with:
           latexmk_shell_escape: true
           latexmk_use_xelatex: true
-          root_file: ./cv/cv.tex
+          root_file: ./cv.tex
 
-      # Replace latest if push to main
-      - name: Delete latest release
+      # Replace latest release
+      - name: Clean | Latest
         uses: dev-drprasad/delete-tag-and-release@v0.2.0
         with:
           delete_release: true
@@ -36,12 +34,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push latest résumé and CV
+      - name: Push | Latest
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          name: Résumé + CV
-          body: "The latest official résumé and cirriculum vitae of Spencer C. Imbleau."
+          name: Résumé, CV
+          body: "The latest résumé and cirriculum vitae of Spencer C. Imbleau."
           draft: false
           prerelease: false
           fail_on_unmatched_files: true
