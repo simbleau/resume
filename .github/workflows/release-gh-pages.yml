@@ -31,6 +31,22 @@ jobs:
           mv resume.pdf pub/
           mv cv.pdf pub/
 
+      - name: Stage | Index
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/index.html
+        env:
+          PDF: resume.pdf
+
+      - name: Stage | Embed
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/embed.html
+        env:
+          PDF: resume.pdf
+
       - name: Stage | Résumé
         uses: cuchi/jinja2-action@v1.2.0
         with:
@@ -39,19 +55,11 @@ jobs:
         env:
           PDF: resume.pdf
 
-      - name: Stage | Résumé, Index
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: ./templates/index.html.j2
-          output_file: pub/index.html
-        env:
-          PDF: resume.pdf
-
       - name: Stage | Résumé, Embed
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
-          output_file: pub/embed.html
+          output_file: pub/embed-resume.html
         env:
           PDF: resume.pdf
 
