@@ -24,11 +24,19 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./cv.tex
 
+      - name: Build | Cover letter
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./coverletter.tex
+
       - name: Stage | PDFs
         run: |
           mkdir pub/
           mv resume.pdf pub/
           mv cv.pdf pub/
+          mv coverletter.pdf pub/
 
       - name: Stage | Index
         uses: cuchi/jinja2-action@v1.2.0
@@ -58,7 +66,7 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
-          output_file: pub/embed-resume.html
+          output_file: pub/resume-embed.html
           variables: |
             PDF: resume.pdf
 
@@ -74,9 +82,25 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
-          output_file: pub/embed-cv.html
+          output_file: pub/cv-embed.html
           variables: |
             PDF: cv.pdf
+
+      - name: Stage | Cover letter
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ./templates/index.html.j2
+          output_file: pub/coverletter.html
+          variables: |
+            PDF: coverletter.pdf
+
+      - name: Stage | Cover letter, Embed
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ./templates/embed.html.j2
+          output_file: pub/coverletter-embed.html
+          variables: |
+            PDF: coverletter.pdf
 
       - name: Deploy, Github Pages
         uses: peaceiris/actions-gh-pages@v3

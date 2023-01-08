@@ -24,6 +24,13 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./cv.tex
 
+      - name: Build | Cover letter
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./coverletter.tex
+
       # Replace latest release
       - name: Clean | Latest
         uses: dev-drprasad/delete-tag-and-release@v0.2.0
@@ -45,3 +52,4 @@ jobs:
           files: |
             resume.pdf
             cv.pdf
+            coverletter.pdf

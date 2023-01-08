@@ -1,5 +1,5 @@
-# 📋 Résumé + CV
-A repository containing the LaTeX source of Spencer Imbleau's résumé and curriculum vitae, tested and deployed with GitHub Actions.
+# 📋 Résumé + CV + Coverletter
+A repository containing the LaTeX source of Spencer Imbleau's résumé, curriculum vitae, and coverletter matter. Tested and deployed with GitHub Actions.
 
 ---
 [![résumé last release](https://img.shields.io/github/release-date/simbleau/resume?logo=github&label=Last%20Release)](https://github.com/simbleau/resume/releases)
@@ -7,17 +7,19 @@ A repository containing the LaTeX source of Spencer Imbleau's résumé and curri
 
 # 🤖 Deployment
 Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/actions).
-- Pushes to `main` trigger a new release of the [latest résumé and cv](https://github.com/simbleau/resume/releases/tag/latest), in several formats.
-  | Artifact         | Link                                                                     | Mirror                                         |
-  | ---------------- | ------------------------------------------------------------------------ | ---------------------------------------------- |
-  | Résumé           | <https://simbleau.github.io/resume/resume.html>                          | <https://simbleau.github.io/resume/>           |
-  | Résumé, Embedded | <https://simbleau.github.io/resume/embed-resume.html>                    | <https://simbleau.github.io/resume/embed.html> |
-  | Résumé, Download | <https://github.com/simbleau/resume/releases/download/latest/resume.pdf> |                                                |
-  | CV               | <https://simbleau.github.io/resume/cv.html>                              |                                                |
-  | CV, Embedded     | <https://simbleau.github.io/resume/embed-cv.html>                        |                                                |
-  | CV, Download     | <https://github.com/simbleau/resume/releases/download/latest/cv.pdf>     |                                                |
+- Pushes to `main` trigger a new release of the [latest résumé, cv, and cover letter](https://github.com/simbleau/resume/releases/tag/latest), available in several formats.
+  | Artifact               | Link                                                                          | Mirror                                         |
+  | ---------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- |
+  | Résumé                 | <https://simbleau.github.io/resume/resume.html>                               | <https://simbleau.github.io/resume/>           |
+  | Résumé, Embedded       | <https://simbleau.github.io/resume/resume-embed.html>                         | <https://simbleau.github.io/resume/embed.html> |
+  | Résumé, Download       | <https://github.com/simbleau/resume/releases/download/latest/resume.pdf>      |                                                |
+  | CV                     | <https://simbleau.github.io/resume/cv.html>                                   |                                                |
+  | CV, Embedded           | <https://simbleau.github.io/resume/cv-embed.html>                             |                                                |
+  | CV, Download           | <https://github.com/simbleau/resume/releases/download/latest/cv.pdf>          |                                                |
+  | Cover letter           | <https://simbleau.github.io/resume/coverletter.html>                          |                                                |
+  | Cover letter, Embedded | <https://simbleau.github.io/resume/coverletter-embed.html>                    |                                                |
+  | Cover letter, Download | <https://github.com/simbleau/resume/releases/download/latest/coverletter.pdf> |                                                |
 - Manually pushed [releases](https://github.com/simbleau/resume/releases) also trigger workflows to upload artifacts.
-  - Only tagged releases upload a cover letter artifact.
 
 # 🔧 Building
 ## Dependencies
