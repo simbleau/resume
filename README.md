@@ -44,6 +44,10 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
   ```bash
   make clean
   ```
+- **Open PDFs**:
+  ```bash
+  make open
+  ```
 
 # 🔏 License
 This project is [MIT](./LICENSE) licensed. You are within your rights to fork my résumé and use it as your own, although you should probably change my name to yours!

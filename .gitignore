@@ -6,6 +6,5 @@
 
 # Ignore build files
 /aux/
-/resume.pdf
-/cv.pdf
-/coverletter.pdf
+/*.pdf
+/*.html
