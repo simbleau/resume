@@ -7,8 +7,7 @@
 
 % Add underline command
 \newcommand{\myuline}[1]{%
-  \uline{\phantom{#1}}%
-  \llap{\contour{white}{#1}}%
+  \uline{#1}%
 }
 
 % Add heading commands
@@ -48,10 +47,13 @@
 
 % Add lettering commands
 \newcommand{\letterparagraph}[1]{
-  \begin{adjustwidth}{0.15in}{0in}
-    #1
-    \medskip
-  \end{adjustwidth}
+  \justifying{
+    \begin{adjustwidth}{0.15in}{0in}
+      #1
+      \medskip
+    \end{adjustwidth}
+  }
+  \raggedright
 }
 \newcommand{\opening}[1]{
     \textit{Dear #1,\\}
