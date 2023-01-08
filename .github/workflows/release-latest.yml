@@ -1,4 +1,4 @@
-name: Replace Latest Release
+name: Release Latest
 on:
   push:
     branches: [main]
