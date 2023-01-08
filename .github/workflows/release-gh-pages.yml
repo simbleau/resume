@@ -44,7 +44,7 @@ jobs:
           template: ./templates/index.html.j2
           output_file: pub/index.html
           variables: |
-            PDF: resume.pdf
+            PDF=resume.pdf
 
       - name: Stage | Embed
         uses: cuchi/jinja2-action@v1.2.0
@@ -52,7 +52,7 @@ jobs:
           template: ./templates/embed.html.j2
           output_file: pub/embed.html
           variables: |
-            PDF: resume.pdf
+            PDF=resume.pdf
 
       - name: Stage | Résumé
         uses: cuchi/jinja2-action@v1.2.0
@@ -60,7 +60,7 @@ jobs:
           template: ./templates/index.html.j2
           output_file: pub/resume.html
           variables: |
-            PDF: resume.pdf
+            PDF=resume.pdf
 
       - name: Stage | Résumé, Embed
         uses: cuchi/jinja2-action@v1.2.0
@@ -68,7 +68,7 @@ jobs:
           template: ./templates/embed.html.j2
           output_file: pub/resume-embed.html
           variables: |
-            PDF: resume.pdf
+            PDF=resume.pdf
 
       - name: Stage | CV
         uses: cuchi/jinja2-action@v1.2.0
@@ -76,7 +76,7 @@ jobs:
           template: ./templates/index.html.j2
           output_file: pub/cv.html
           variables: |
-            PDF: cv.pdf
+            PDF=cv.pdf
 
       - name: Stage | CV, Embed
         uses: cuchi/jinja2-action@v1.2.0
@@ -84,7 +84,7 @@ jobs:
           template: ./templates/embed.html.j2
           output_file: pub/cv-embed.html
           variables: |
-            PDF: cv.pdf
+            PDF=cv.pdf
 
       - name: Stage | Cover letter
         uses: cuchi/jinja2-action@v1.2.0
@@ -92,7 +92,7 @@ jobs:
           template: ./templates/index.html.j2
           output_file: pub/coverletter.html
           variables: |
-            PDF: coverletter.pdf
+            PDF=coverletter.pdf
 
       - name: Stage | Cover letter, Embed
         uses: cuchi/jinja2-action@v1.2.0
@@ -100,7 +100,7 @@ jobs:
           template: ./templates/embed.html.j2
           output_file: pub/coverletter-embed.html
           variables: |
-            PDF: coverletter.pdf
+            PDF=coverletter.pdf
 
       - name: Deploy, Github Pages
         uses: peaceiris/actions-gh-pages@v3
