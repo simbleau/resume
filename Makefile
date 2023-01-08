@@ -9,7 +9,6 @@ resume:
 	mv ./aux/resume.pdf ./resume.pdf
 	jinja2 templates/index.html.j2 -D PDF='resume.pdf' --strict > resume.html
 	jinja2 templates/embed.html.j2 -D PDF='resume.pdf' --strict > embed-resume.html
-	xdg-open resume.pdf || open resume.pdf || explorer.exe resume.pdf
 
 cv:
 	rm -rf ./aux
@@ -20,7 +19,6 @@ cv:
 	mv ./aux/cv.pdf ./cv.pdf
 	jinja2 templates/index.html.j2 -D PDF='cv.pdf' --strict > cv.html
 	jinja2 templates/embed.html.j2 -D PDF='cv.pdf' --strict > embed-cv.html
-	xdg-open cv.pdf || open cv.pdf || explorer.exe cv.pdf
 
 coverletter:
 	rm -rf ./aux
