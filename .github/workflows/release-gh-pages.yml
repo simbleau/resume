@@ -35,48 +35,48 @@ jobs:
         with:
           template: ./templates/index.html.j2
           output_file: pub/index.html
-        env:
-          PDF: resume.pdf
+          variables: |
+            PDF: resume.pdf
 
       - name: Stage | Embed
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
           output_file: pub/embed.html
-        env:
-          PDF: resume.pdf
+          variables: |
+            PDF: resume.pdf
 
       - name: Stage | Résumé
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/index.html.j2
           output_file: pub/resume.html
-        env:
-          PDF: resume.pdf
+          variables: |
+            PDF: resume.pdf
 
       - name: Stage | Résumé, Embed
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
           output_file: pub/embed-resume.html
-        env:
-          PDF: resume.pdf
+          variables: |
+            PDF: resume.pdf
 
       - name: Stage | CV
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/index.html.j2
           output_file: pub/cv.html
-        env:
-          PDF: cv.pdf
+          variables: |
+            PDF: cv.pdf
 
       - name: Stage | CV, Embed
         uses: cuchi/jinja2-action@v1.2.0
         with:
           template: ./templates/embed.html.j2
           output_file: pub/embed-cv.html
-        env:
-          PDF: cv.pdf
+          variables: |
+            PDF: cv.pdf
 
       - name: Deploy, Github Pages
         uses: peaceiris/actions-gh-pages@v3

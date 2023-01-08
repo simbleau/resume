@@ -7,8 +7,8 @@ resume:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
 	mv ./aux/resume.pdf ./resume.pdf
-	PDF='resume.pdf' jinja2 templates/index.html.j2 --strict > resume.html
-	PDF='resume.pdf' jinja2 templates/embed.html.j2 --strict > embed-resume.html
+	jinja2 templates/index.html.j2 -D PDF='resume.pdf' --strict > resume.html
+	jinja2 templates/embed.html.j2 -D PDF='resume.pdf' --strict > embed-resume.html
 	xdg-open resume.pdf || open resume.pdf || explorer.exe resume.pdf
 
 cv:
@@ -18,8 +18,8 @@ cv:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./cv.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./cv.tex
 	mv ./aux/cv.pdf ./cv.pdf
-	PDF='cv.pdf' jinja2 templates/index.html.j2 --strict > cv.html
-	PDF='cv.pdf' jinja2 templates/embed.html.j2 --strict > embed-cv.html
+	jinja2 templates/index.html.j2 -D PDF='cv.pdf' --strict > cv.html
+	jinja2 templates/embed.html.j2 -D PDF='cv.pdf' --strict > embed-cv.html
 	xdg-open cv.pdf || open cv.pdf || explorer.exe cv.pdf
 
 coverletter:
