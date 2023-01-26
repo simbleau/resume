@@ -42,65 +42,57 @@ jobs:
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
-          data_file: ./templates/resume.env
-          data_format: env
           output_file: pub/index.html
+          variables: PDF='resume.pdf'
 
       - name: Stage | Embed
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
-          data_file: ./templates/resume.env
-          data_format: env
           output_file: pub/embed.html
+          variables: PDF='resume.pdf'
 
       - name: Stage | Résumé
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
-          data_file: ./templates/resume.env
-          data_format: env
           output_file: pub/resume.html
+          variables: PDF='resume.pdf'
 
       - name: Stage | Résumé, Embed
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
-          data_file: ./templates/resume.env
-          data_format: env
           output_file: pub/resume-embed.html
+          variables: PDF='resume.pdf'
 
       - name: Stage | CV
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
-          data_file: ./templates/cv.env
-          data_format: env
           output_file: pub/cv.html
+          variables: PDF='cv.pdf'
 
       - name: Stage | CV, Embed
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
-          data_file: ./templates/cv.env
-          data_format: env
           output_file: pub/cv-embed.html
+          variables: PDF='cv.pdf'
 
       - name: Stage | Cover letter
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
-          data_file: ./templates/coverletter.env
-          data_format: env
           output_file: pub/coverletter.html
+          variables: PDF='coverletter.pdf'
 
       - name: Stage | Cover letter, Embed
         uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
-          data_file: ./templates/coverletter.env
-          data_format: env
           output_file: pub/coverletter-embed.html
+          variables: PDF='coverletter.pdf'
 
       - name: Deploy, Github Pages
         uses: peaceiris/actions-gh-pages@v3

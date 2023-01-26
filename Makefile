@@ -9,8 +9,8 @@ resume:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
 	mv ./aux/resume.pdf ./resume.pdf
-	j2 templates/index.html.j2 templates/resume.env > resume.html
-	j2 templates/embed.html.j2 templates/resume.env > embed-resume.html
+	PDF='resume.pdf' j2 templates/index.html.j2 > resume.html
+	PDF='resume.pdf' j2 templates/embed.html.j2 > embed-resume.html
 
 cv:
 	rm -rf ./aux
@@ -21,8 +21,8 @@ cv:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./cv.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./cv.tex
 	mv ./aux/cv.pdf ./cv.pdf
-	j2 templates/index.html.j2 templates/cv.env > cv.html
-	j2 templates/embed.html.j2 templates/cv.env > embed-cv.html
+	PDF='cv.pdf' j2 templates/index.html.j2 > cv.html
+	PDF='cv.pdf' j2 templates/embed.html.j2 > embed-cv.html
 
 coverletter:
 	rm -rf ./aux
@@ -31,6 +31,8 @@ coverletter:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./coverletter.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./coverletter.tex
 	mv ./aux/coverletter.pdf ./coverletter.pdf
+	PDF='coverletter.pdf' j2 templates/index.html.j2 > coverletter.html
+	PDF='coverletter.pdf' j2 templates/embed.html.j2 > embed-coverletter.html
 
 open:
 	@if [ -f "resume.pdf" ]; then\
