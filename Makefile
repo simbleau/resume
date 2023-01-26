@@ -3,6 +3,8 @@ all: clean resume cv coverletter
 resume:
 	rm -rf ./aux
 	rm -f ./resume.pdf
+	rm -f embed-resume.html
+	rm -f resume.html
 	mkdir -p ./aux
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
@@ -13,6 +15,8 @@ resume:
 cv:
 	rm -rf ./aux
 	rm -f ./cv.pdf
+	rm -f embed-cv.html
+	rm -f cv.html
 	mkdir -p ./aux
 	latexmk -xelatex -shell-escape -output-directory ./aux ./cv.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./cv.tex
