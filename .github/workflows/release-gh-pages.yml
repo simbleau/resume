@@ -41,6 +41,7 @@ jobs:
       - name: Stage | Index
         uses: cuchi/jinja2-action@v1.2.0
         with:
+          strict: false
           template: ./templates/index.html.j2
           output_file: pub/index.html
           variables: |
