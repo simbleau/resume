@@ -41,9 +41,9 @@ jobs:
       - name: Stage | Index
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          strict: false
           template: ./templates/index.html.j2
           data_file: ./templates/resume.env
+          data_format: env
           output_file: pub/index.html
 
       - name: Stage | Embed
@@ -51,6 +51,7 @@ jobs:
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/resume.env
+          data_format: env
           output_file: pub/embed.html
 
       - name: Stage | Résumé
@@ -58,6 +59,7 @@ jobs:
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/resume.env
+          data_format: env
           output_file: pub/resume.html
 
       - name: Stage | Résumé, Embed
@@ -65,6 +67,7 @@ jobs:
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/resume.env
+          data_format: env
           output_file: pub/resume-embed.html
 
       - name: Stage | CV
@@ -72,6 +75,7 @@ jobs:
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/cv.env
+          data_format: env
           output_file: pub/cv.html
 
       - name: Stage | CV, Embed
@@ -79,6 +83,7 @@ jobs:
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/cv.env
+          data_format: env
           output_file: pub/cv-embed.html
 
       - name: Stage | Cover letter
@@ -86,6 +91,7 @@ jobs:
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/coverletter.env
+          data_format: env
           output_file: pub/coverletter.html
 
       - name: Stage | Cover letter, Embed
@@ -93,6 +99,7 @@ jobs:
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/coverletter.env
+          data_format: env
           output_file: pub/coverletter-embed.html
 
       - name: Deploy, Github Pages
