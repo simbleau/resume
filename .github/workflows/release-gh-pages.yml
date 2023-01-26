@@ -39,7 +39,7 @@ jobs:
           mv coverletter.pdf pub/
 
       - name: Stage | Index
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/resume.env
@@ -47,7 +47,7 @@ jobs:
           output_file: pub/index.html
 
       - name: Stage | Embed
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/resume.env
@@ -55,7 +55,7 @@ jobs:
           output_file: pub/embed.html
 
       - name: Stage | Résumé
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/resume.env
@@ -63,7 +63,7 @@ jobs:
           output_file: pub/resume.html
 
       - name: Stage | Résumé, Embed
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/resume.env
@@ -71,7 +71,7 @@ jobs:
           output_file: pub/resume-embed.html
 
       - name: Stage | CV
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/cv.env
@@ -79,7 +79,7 @@ jobs:
           output_file: pub/cv.html
 
       - name: Stage | CV, Embed
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/cv.env
@@ -87,7 +87,7 @@ jobs:
           output_file: pub/cv-embed.html
 
       - name: Stage | Cover letter
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/index.html.j2
           data_file: ./templates/coverletter.env
@@ -95,7 +95,7 @@ jobs:
           output_file: pub/coverletter.html
 
       - name: Stage | Cover letter, Embed
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v1.2.1
         with:
           template: ./templates/embed.html.j2
           data_file: ./templates/coverletter.env
