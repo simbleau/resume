@@ -25,7 +25,7 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
 ## Dependencies
 - [TeXLive, full](https://www.tug.org/texlive/)
 - [Make](https://www.gnu.org/software/make/)
-- [jinja2-cli](https://github.com/mattrobenolt/jinja2-cli)
+- [j2cli](https://github.com/kolypto/j2cli)
 ## Commands
 - **Build the résumé**:
   ```bash

@@ -9,8 +9,8 @@ resume:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
 	mv ./aux/resume.pdf ./resume.pdf
-	jinja2 templates/index.html.j2 -D PDF='resume.pdf' --strict > resume.html
-	jinja2 templates/embed.html.j2 -D PDF='resume.pdf' --strict > embed-resume.html
+	j2 templates/index.html.j2 templates/resume.env > resume.html
+	j2 templates/embed.html.j2 templates/resume.env > embed-resume.html
 
 cv:
 	rm -rf ./aux
@@ -21,8 +21,8 @@ cv:
 	latexmk -xelatex -shell-escape -output-directory ./aux ./cv.tex \
 		|| xelatex --shell-escape -output-directory ./aux ./cv.tex
 	mv ./aux/cv.pdf ./cv.pdf
-	jinja2 templates/index.html.j2 -D PDF='cv.pdf' --strict > cv.html
-	jinja2 templates/embed.html.j2 -D PDF='cv.pdf' --strict > embed-cv.html
+	j2 templates/index.html.j2 templates/cv.env > cv.html
+	j2 templates/embed.html.j2 templates/cv.env > embed-cv.html
 
 coverletter:
 	rm -rf ./aux
