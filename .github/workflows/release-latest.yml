@@ -45,9 +45,7 @@ jobs:
         with:
           tag_name: latest
           name: Résumé, CV
-          body: "The latest résumé and cirriculum vitae of Spencer C. Imbleau."
-          draft: false
-          prerelease: false
+          body: "The latest résumé, cirriculum vitae, and coverletter template from Spencer C. Imbleau."
           fail_on_unmatched_files: true
           files: |
             resume.pdf
