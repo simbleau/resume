@@ -38,61 +38,47 @@ jobs:
           mv cv.pdf pub/
           mv coverletter.pdf pub/
 
-      - name: Stage | Index
-        uses: cuchi/jinja2-action@v1.2.1
+      - name: Setup | Python 3.9
+        uses: actions/setup-python@v2
         with:
-          template: ./templates/index.html.j2
-          output_file: pub/index.html
-          variables: PDF=resume.pdf
+          python-version: 3.9
+
+      - name: Setup | j2cli
+        run: |
+          pip3 install --user --upgrade j2cli
+          j2 --version
+
+      - name: Stage | Index
+        run: |
+          PDF='resume.pdf' j2 templates/index.html.j2 > pub/index.html
 
       - name: Stage | Embed
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/embed.html.j2
-          output_file: pub/embed.html
-          variables: PDF=resume.pdf
+        run: |
+          PDF='resume.pdf' j2 templates/embed.html.j2 > pub/embed.html
 
       - name: Stage | Résumé
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/index.html.j2
-          output_file: pub/resume.html
-          variables: PDF=resume.pdf
+        run: |
+          PDF='resume.pdf' j2 templates/index.html.j2 > pub/resume.html
 
       - name: Stage | Résumé, Embed
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/embed.html.j2
-          output_file: pub/resume-embed.html
-          variables: PDF=resume.pdf
+        run: |
+          PDF='resume.pdf' j2 templates/embed.html.j2 > pub/resume-embed.html
 
       - name: Stage | CV
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/index.html.j2
-          output_file: pub/cv.html
-          variables: PDF=cv.pdf
+        run: |
+          PDF='cv.pdf' j2 templates/index.html.j2 > pub/cv.html
 
       - name: Stage | CV, Embed
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/embed.html.j2
-          output_file: pub/cv-embed.html
-          variables: PDF=cv.pdf
+        run: |
+          PDF='cv.pdf' j2 templates/embed.html.j2 > pub/cv-embed.html
 
       - name: Stage | Cover letter
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/index.html.j2
-          output_file: pub/coverletter.html
-          variables: PDF=coverletter.pdf
+        run: |
+          PDF='coverletter.pdf' j2 templates/index.html.j2 > pub/coverletter.html
 
       - name: Stage | Cover letter, Embed
-        uses: cuchi/jinja2-action@v1.2.1
-        with:
-          template: ./templates/embed.html.j2
-          output_file: pub/coverletter-embed.html
-          variables: PDF=coverletter.pdf
+        run: |
+          PDF='coverletter.pdf' j2 templates/embed.html.j2 > pub/coverletter-embed.html
 
       - name: Deploy, Github Pages
         uses: peaceiris/actions-gh-pages@v3
