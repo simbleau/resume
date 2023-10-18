@@ -5,6 +5,12 @@
 % Add vertical centering command
 \def\vc#1{$\vcenter{\hbox{#1}}$}
 
+% Add custom icon
+\newcommand{\svgicon}[1]{%
+\raisebox{-1pt}{\includegraphics[height=1em, keepaspectratio]{#1}\hspace{-0.25em}}
+%
+}
+
 % Add underline command
 \newcommand{\myuline}[1]{%
   \uline{#1}%
