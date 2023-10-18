@@ -46,6 +46,7 @@ jobs:
           name: Résumé, CV
           body: "The latest résumé, cirriculum vitae, and coverletter template from Spencer C. Imbleau."
           fail_on_unmatched_files: true
+          draft: false
           files: |
             resume.pdf
             cv.pdf
