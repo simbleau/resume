@@ -39,7 +39,8 @@ jobs:
           delete_release: true
           tag_name: latest
 
-      - name: Push | Latest
+      - name: Release | Latest
+        id: create_release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
@@ -51,3 +52,10 @@ jobs:
             resume.pdf
             cv.pdf
             coverletter.pdf
+
+      - name: Release | Publish
+        uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
