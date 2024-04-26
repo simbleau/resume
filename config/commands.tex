@@ -72,3 +72,13 @@
     \vspace{0.1cm}
     \includegraphics[height=2in, width=2in, keepaspectratio]{signature}
 }
+
+
+% Redacted command
+\newcommand{\redacted}[1]{
+    \raisebox{-0.3em}{
+      \begin{tcolorbox}[colback=black, coltext=white, hbox, height=1.2em, halign=center, valign=center, boxsep=0pt,left=-1pt,right=-1pt,top=3pt,bottom=2pt]
+        \textnormal{#1}
+      \end{tcolorbox}
+    }
+}
