@@ -15,13 +15,6 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./resume.tex
 
-      - name: Build | Cirriculum Vitae
-        uses: xu-cheng/latex-action@v3
-        with:
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
-          root_file: ./cv.tex
-
       - name: Build | Coverletter
         uses: xu-cheng/latex-action@v3
         with:

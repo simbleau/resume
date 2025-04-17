@@ -1,0 +1,51 @@
+<svg id="Logo" version="1.1" sodipodi:docname="webgpu.svg" inkscape:version="1.2.2 (b0a84865, 2022-12-01)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" viewBox="0.17 0.17 225.37 141.93">
+  <sodipodi:namedview id="namedview13" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.4461985" inkscape:cx="93.002446" inkscape:cy="194.64824" inkscape:window-width="1390" inkscape:window-height="1099" inkscape:window-x="245" inkscape:window-y="25" inkscape:window-maximized="0" inkscape:current-layer="Logo"/>
+  <defs id="defs4">
+    <style id="style2">
+     .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+        stroke-linejoin: round;
+      }
+
+      .cls-6 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        fill: #005a9c;
+        stroke: #005a9c;
+      }
+
+      .cls-2 {
+        fill: #0066b0;
+        stroke: #0066b0;
+      }
+
+      .cls-3 {
+        fill: #0076cc;
+        stroke: #0076cc;
+      }
+
+      .cls-4 {
+        fill: #0086e8;
+        stroke: #0086e8;
+      }
+
+      .cls-5 {
+        fill: #0093ff;
+        stroke: #0093ff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .cls-6 {
+          fill: #eeeeee;
+        }
+      }
+    </style>
+  </defs>
+  <path id="Triangle_4" data-name="Triangle 4" class="cls-4" d="M 204.98753,71.120694 184.50579,35.645424 H 225.5278 Z" style="stroke-width:0;fill:#000000;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none"/>
+  <path id="Triangle_5" data-name="Triangle 5" class="cls-5" d="M 204.98753,0.17048554 184.50579,35.645764 h 41.02201 z" style="stroke-width:0;fill:#000000;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none"/>
+  <path id="Triangle_3" data-name="Triangle 3" class="cls-3" d="m 164.02677,142.07125 -40.96416,-70.950556 81.92832,-6.18e-4 z" style="stroke-width:0;fill:#000000;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none"/>
+  <path id="Triangle_2" data-name="Triangle 2" class="cls-2" d="m 164.02677,0.170145 -40.96416,70.950549 81.92832,-6.18e-4 z" style="stroke-width:0;fill:#000000;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none"/>
+  <path id="Triangle_1" data-name="Triangle 1" class="cls-1" d="M 82.09845,142.07125 0.17013255,0.170145 H 164.02337 Z" style="stroke-width:0;fill:#000000;stroke:#ffffff;stroke-opacity:1;stroke-dasharray:none"/>
+</svg>

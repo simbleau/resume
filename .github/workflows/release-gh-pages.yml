@@ -24,13 +24,6 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./resume.tex
 
-      - name: Build | Cirriculum Vitae
-        uses: xu-cheng/latex-action@v3
-        with:
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
-          root_file: ./cv.tex
-
       - name: Build | Cover letter
         uses: xu-cheng/latex-action@v3
         with:
@@ -42,7 +35,6 @@ jobs:
         run: |
           mkdir pub/
           mv resume.pdf pub/
-          mv cv.pdf pub/
           mv coverletter.pdf pub/
 
       - name: Setup | Python 3.9
@@ -71,14 +63,6 @@ jobs:
         run: |
           PDF='resume.pdf' j2 templates/embed.html.j2 > pub/resume-embed.html
 
-      - name: Stage | CV
-        run: |
-          PDF='cv.pdf' j2 templates/index.html.j2 > pub/cv.html
-
-      - name: Stage | CV, Embed
-        run: |
-          PDF='cv.pdf' j2 templates/embed.html.j2 > pub/cv-embed.html
-
       - name: Stage | Cover letter
         run: |
           PDF='coverletter.pdf' j2 templates/index.html.j2 > pub/coverletter.html
@@ -93,7 +77,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'pub/'
+          path: "pub/"
 
       - name: Deploy to GitHub Pages
         id: deployment

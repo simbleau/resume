@@ -17,13 +17,6 @@ jobs:
           latexmk_use_xelatex: true
           root_file: ./resume.tex
 
-      - name: Build | Cirriculum Vitae
-        uses: xu-cheng/latex-action@v3
-        with:
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
-          root_file: ./cv.tex
-
       - name: Build | Cover letter
         uses: xu-cheng/latex-action@v3
         with:
@@ -44,13 +37,12 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          name: Résumé, CV
-          body: "The latest résumé, cirriculum vitae, and coverletter template from Spencer C. Imbleau."
+          name: Résumé
+          body: "The latest résumé and coverletter template from Spencer C. Imbleau."
           fail_on_unmatched_files: true
           draft: false
           files: |
             resume.pdf
-            cv.pdf
             coverletter.pdf
 
       - name: Release | Publish
