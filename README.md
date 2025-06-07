@@ -20,6 +20,7 @@ Deployment is automated by [GitHub Actions](https://github.com/simbleau/resume/a
   | Cover letter           | <https://simbleau.github.io/resume/coverletter.html>                          |                                                |
   | Cover letter, Embedded | <https://simbleau.github.io/resume/coverletter-embed.html>                    |                                                |
   | Cover letter, Download | <https://github.com/simbleau/resume/releases/download/latest/coverletter.pdf> |                                                |
+
 - Manually pushed [releases](https://github.com/simbleau/resume/releases) also trigger workflows to upload artifacts.
 
 ## 🔧 Building

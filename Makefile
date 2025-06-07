@@ -1,26 +1,33 @@
+RESUME_SRC = resume.tex
+COVERLETTER_SRC = coverletter.tex
+OUTPUT_DIR = ./aux
+INDEX_TEMPLATES = templates/index.html.j2
+EMBED_TEMPLATES = templates/embed.html.j2
+
+.PHONY: all clean open
+
 all: clean resume coverletter
 
+clean:
+	rm -rf $(OUTPUT_DIR)
+	rm -f *.pdf
+	rm -f *.html
+
 resume:
-	rm -rf ./aux
-	rm -f ./resume.pdf
-	rm -f embed-resume.html
-	rm -f resume.html
-	mkdir -p ./aux
-	latexmk -xelatex -shell-escape -output-directory ./aux ./resume.tex \
-		|| xelatex --shell-escape -output-directory ./aux ./resume.tex
-	mv ./aux/resume.pdf ./resume.pdf
-	PDF='resume.pdf' j2 templates/index.html.j2 > resume.html
-	PDF='resume.pdf' j2 templates/embed.html.j2 > embed-resume.html
+	$(call create-output-dir)
+	latexmk -xelatex -shell-escape -output-directory $(OUTPUT_DIR) $(RESUME_SRC) || \
+		xelatex --shell-escape -output-directory $(OUTPUT_DIR) $(RESUME_SRC)
+	mv $(OUTPUT_DIR)/$(RESUME_SRC:.tex=.pdf) .
+	PDF='$(basename $(RESUME_SRC))' j2 $(INDEX_TEMPLATES) > resume.html
+	PDF='$(basename $(RESUME_SRC))' j2 $(EMBED_TEMPLATES) > embed-resume.html
 
 coverletter:
-	rm -rf ./aux
-	rm -f ./coverletter.pdf
-	mkdir -p ./aux
-	latexmk -xelatex -shell-escape -output-directory ./aux ./coverletter.tex \
-		|| xelatex --shell-escape -output-directory ./aux ./coverletter.tex
-	mv ./aux/coverletter.pdf ./coverletter.pdf
-	PDF='coverletter.pdf' j2 templates/index.html.j2 > coverletter.html
-	PDF='coverletter.pdf' j2 templates/embed.html.j2 > embed-coverletter.html
+	$(call create-output-dir)
+	latexmk -xelatex -shell-escape -output-directory $(OUTPUT_DIR) $(COVERLETTER_SRC) || \
+		xelatex --shell-escape -output-directory $(OUTPUT_DIR) $(COVERLETTER_SRC)
+	mv $(OUTPUT_DIR)/$(COVERLETTER_SRC:.tex=.pdf) .
+	PDF='$(basename $(COVERLETTER_SRC))' j2 $(INDEX_TEMPLATES) > coverletter.html
+	PDF='$(basename $(COVERLETTER_SRC))' j2 $(EMBED_TEMPLATES) > embed-coverletter.html
 
 open:
 	@if [ -f "resume.pdf" ]; then\
@@ -30,7 +37,7 @@ open:
 		xdg-open coverletter.pdf || open coverletter.pdf || explorer.exe coverletter.pdf;\
 	fi
 
-clean:
-	@rm -rf ./aux
-	@rm -f ./*.pdf
-	@rm -f ./*.html
+define create-output-dir
+	rm -rf $(OUTPUT_DIR)
+	mkdir -p $(OUTPUT_DIR)
+endef
